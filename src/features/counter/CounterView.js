@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
 import { decrement, increment, incrementByFive, reset } from './counterSlice';
+import styles from './button.module.css'
 
 const CounterView = () => {
 
@@ -10,10 +11,10 @@ const CounterView = () => {
     return (
         <div>
            <h2>Count : {count}</h2>
-           <button onClick={()=>{dispatch(increment())}}>Increment</button>
-           <button onClick={()=>{dispatch(decrement())}}>Decrement</button>
-           <button onClick={()=>{dispatch(reset())}}>Reset</button>
-           <button onClick={()=>{dispatch(incrementByFive(5))}}>IncreaseByFive</button>
+           <button className={styles.myButton} onClick={()=>{dispatch(increment())}}>Increment</button>
+           <button className={styles.myButton} onClick={()=>{dispatch(decrement())}}>Decrement</button>
+           <button className={styles.myButton} onClick={()=>{dispatch(reset())}}>Reset</button>
+           <button className={styles.myButton} onClick={()=>{dispatch(incrementByFive(5))}}>IncreaseByFive</button>
         </div>
     );
 };
